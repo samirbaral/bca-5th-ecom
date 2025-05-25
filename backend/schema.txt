@@ -1,0 +1,66 @@
+Collection name : bca5thecom
+
+
+🔹 2. Create a New Database
+Click ➕ "Create Database"
+
+Database Name: ecommerceDB
+
+Collection Name: products (you can add others later)
+
+Click Create Database.
+
+🔹 3. Add More Collections
+Inside ecommerceDB, click ➕ "Create Collection" for each:
+
+Collection Name	Description
+users	Customers (and admins)
+products	T-shirts, hoodies, prices, sizes
+orders	Orders placed by users
+categories	Optional: Men, Women, Kids, etc.
+
+🧩 Example Schemas (What Documents Look Like)
+📦 products
+json
+Copy
+Edit
+{
+  "name": "Classic Black T-Shirt",
+  "description": "Premium cotton t-shirt",
+  "price": 699,
+  "category": "Men",
+  "sizes": ["S", "M", "L", "XL"],
+  "stock": 120,
+  "imageUrl": "/images/black-tshirt.jpg",
+  "isFeatured": true,
+  "createdAt": { "$date": "2024-05-01T00:00:00Z" }
+}
+👤 users
+json
+Copy
+Edit
+{
+  "name": "John Doe",
+  "email": "john@example.com",
+  "password": "hashed_password_here",
+  "isAdmin": false,
+  "createdAt": { "$date": "2024-05-10T00:00:00Z" }
+}
+🛒 orders
+json
+Copy
+Edit
+{
+  "userId": "ObjectId('...')",
+  "products": [
+    {
+      "productId": "ObjectId('...')",
+      "quantity": 2,
+      "size": "M"
+    }
+  ],
+  "totalAmount": 1398,
+  "paymentStatus": "Paid",
+  "orderStatus": "Processing",
+  "createdAt": { "$date": "2024-05-20T00:00:00Z" }
+}

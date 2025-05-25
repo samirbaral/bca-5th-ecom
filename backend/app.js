@@ -8,7 +8,7 @@ app.use(cookieParser());
 app.use(cors());
 
 // Route imports
-const productRoute = require('./routes/productRoute');
+const productRoute = require('./routes/productRoutes');
 const userRoute = require('./routes/userRoute');
 
 app.use('/api/v1', productRoute);
