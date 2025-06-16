@@ -1,28 +1,14 @@
 const express = require('express');
 const router = express.Router();
+const { createProduct, getAllProducts, getProductDetails } = require('../controllers/productController');
 
 // Get all products
-router.get('/products', (req, res) => {
-    res.status(200).json({
-        success: true,
-        message: "Get all products route"
-    });
-});
+router.get('/products', getAllProducts);
 
 // Create new product
-router.post('/product/new', (req, res) => {
-    res.status(201).json({
-        success: true,
-        message: "Create product route"
-    });
-});
+router.post('/product/new', createProduct);
 
 // Get single product
-router.get('/product/:id', (req, res) => {
-    res.status(200).json({
-        success: true,
-        message: "Get single product route"
-    });
-});
+router.get('/product/:id', getProductDetails);
 
 module.exports = router;
